@@ -1,5 +1,0 @@
-#ifndef __SPE_CONTROL_H
-#define __SPE_CONTROL_H
-	#include<stdio.h>
-	#include<stdlib.h>
-#endif
