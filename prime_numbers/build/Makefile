@@ -8,7 +8,9 @@
 # ar  rcs libmean.a      calc_mean.o
 
 vpath %.h ../include
+vpath %.h ../include/tests
 vpath %.c ../src
+vpath %.c ../src/tests
 
 # Compiladores
 #CXX=spu-g++
@@ -26,7 +28,7 @@ TEST_NAME = run_tests
 
 # Nomes dos arquivos objetos
 OBJ = $(MAIN_NAME).o
-TESTS_OBJ = CuTest.o AllTests.o
+TESTS_OBJ = CuTest.o AllTests.o prime_number_serial_test.o
 SPU_OBJ = $(SPU_NAME).spuo
 SPU_PPU_OBJ = $(SPU_NAME).o
 
@@ -36,7 +38,7 @@ SPU_SRC_DIR = ../src
 
 LIB_DIR = -L ../lib
 LIBS = -lspe2 -lpthread
-INCLUDE_DIRS = -I ../include
+INCLUDE_DIRS = -I ../include -I ../include/tests
 
 CXXFLAGS = $(INCLUDE_DIRS) -Wall
 CFLAGS = $(INCLUDE_DIRS) -Wall

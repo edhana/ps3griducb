@@ -1,0 +1,6 @@
+#ifndef PRIME_NUMBER_SERIAL_H
+#define PRIME_NUMBER_SERIAL_H
+
+#define ARRAY_SIZE 10
+
+#endif
