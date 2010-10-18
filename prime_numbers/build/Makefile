@@ -43,7 +43,7 @@ INCLUDE_DIRS = -I ../include -I ../include/tests
 CXXFLAGS = $(INCLUDE_DIRS) -Wall
 CFLAGS = $(INCLUDE_DIRS) -Wall
 LDFLAGS = --cref -s -o $(MAIN_NAME) -Wl $(LIB_DIR) $(LIBS)
-CU_TEST_FLAGS =  --cref -s -o $(TEST_NAME) -Wl $(LIB_DIR)
+CU_TEST_FLAGS =  --cref -s -o $(TEST_NAME) -Wl $(LIB_DIR) -lm
 
 all: $(BIN)
 	@echo "*** Fim do Processo de Compilacao***"

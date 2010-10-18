@@ -5,7 +5,7 @@
     #define FALSE 0
     #define TRUE 1
     
-    int array_length(int array[]);
-    void find_primes(int number_array[]);
+    void find_primes(const int array_size, int number_array[]);
+    void print_primes(const int array_size, int number_array[]);
 
 #endif

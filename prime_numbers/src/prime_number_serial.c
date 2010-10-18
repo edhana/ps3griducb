@@ -4,39 +4,37 @@
 #include "CuTest.h"
 
 /*
- * Retorna o tamanho de um array
- */
-int array_length(int array[]){
-    int size = 0;
-
-    size = sizeof(array)/sizeof(int);
-
-    return size;
-}
-
-/*
  * Array representing the numbers to be evaluated
  */
-void find_primes(int number_array[]){
+void find_primes(const int array_size, int number_array[]){
 
     // Set all but the first element of Array to FALSE
     number_array[0] = FALSE;
     int i = 0;
 
-    for(i = 1; i < ARRAY_SIZE; i++){
+    for(i = 1; i < array_size; i++){
         number_array[i] = TRUE;
-        number_array[i] = i;
     }
 
-    for(i = 2; i < sqrt(ARRAY_SIZE); i++){
-        printf("Valor de segundo %d\n", i);
+    for(i = 2; i < sqrt(array_size); i++){
 
         if(number_array[i] == TRUE){
             int j = 0;
-            for(j = i; j < ARRAY_SIZE; j+=i){
+            for(j = (i*2); j < array_size; j+=i){ //Vai do primeiro multiplo ao ultimo dentro do limite
                 number_array[j] = FALSE;
             }
         }
     }
+}
+
+void print_primes(const int array_size, int number_array[]){
+    int i = 0;
+    
+    printf("Imprimindo os primos: ");
+    for(i = 0; i < array_size; i++){
+        if(number_array[i] == TRUE)
+            printf("%d ", i);
+    }
+    printf("\n", i);
 }
 
