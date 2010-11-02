@@ -13,10 +13,10 @@ vpath %.c ../src
 vpath %.c ../src/tests
 
 # Compiladores
-#CXX=spu-g++
-#CC=ppu-gcc
-CXX=g++
-CC=gcc
+CXX=spu-g++
+CC=ppu-gcc
+#CXX=g++
+#CC=gcc
 SPU_CC=spu-gcc
 EMBED_CC=ppu-embedspu
 
@@ -43,7 +43,7 @@ INCLUDE_DIRS = -I ../include -I ../include/tests
 CXXFLAGS = $(INCLUDE_DIRS) -Wall
 CFLAGS = $(INCLUDE_DIRS) -Wall
 LDFLAGS = --cref -s -o $(MAIN_NAME) -Wl $(LIB_DIR) $(LIBS)
-CU_TEST_FLAGS =  --cref -s -o $(TEST_NAME) -Wl $(LIB_DIR) -lm
+CU_TEST_FLAGS =  --cref -s -o $(TEST_NAME) -Wl $(LIB_DIR) $(LIBS) -lm
 
 all: $(BIN)
 	@echo "*** Fim do Processo de Compilacao***"

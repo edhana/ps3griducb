@@ -32,16 +32,16 @@ void test_the_multiples_are_false(CuTest *tc){
 
     find_primes(size, array);
     CuAssertTrue(tc, array[4] == FALSE);
-    print_primes(size, array);
+    //print_primes(size, array);
 }
 
 void test_the_long_prime_are_false(CuTest *tc){
-    const int size = 500000;
+    const int size = 2610000;
     int array[size];
 
     find_primes(size, array);
-    CuAssertTrue(tc, array[4] == FALSE);
-    print_primes(size, array);
+/*    CuAssertTrue(tc, array[4] == FALSE);*/
+/*    print_primes(size, array);*/
 }
 
 CuSuite* PrimeNumberGetSuite() {

@@ -17,6 +17,8 @@ void *ppu_pthread_function(void *arg){
 extern spe_program_handle_t hello_spu;
 
 int main(void){
+    printf("Start PPU Execution\n");
+
 	spe_context_ptr_t context;
 	pthread_t pthread;
 
@@ -28,6 +30,7 @@ int main(void){
 
     pthread_join(pthread, NULL);
     spe_context_destroy(context);
-    printf("Hello World! PPU\n");
+
+    printf("End PPU Execution\n");
     return 0;
 }
